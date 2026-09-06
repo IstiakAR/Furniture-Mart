@@ -65,11 +65,16 @@ export function Collections({
                     <span className="chapter-number text-brass/50">{String(i + 1).padStart(2, "0")}</span>
                     <span className="meta text-ivory/60">{c.title}</span>
                   </span>
-                  <div className="image-frame relative aspect-[4/5] overflow-hidden bg-[#263E39]">
+                  <div className="image-frame relative aspect-[4/5] overflow-hidden bg-[#263E39] lg:aspect-auto lg:h-[60svh]">
                     <img src={c.image} alt={c.title} className="h-full w-full object-cover" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                    <div className="absolute bottom-5 left-5 z-10 translate-y-2 text-ivory opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="absolute bottom-5 left-5 z-10 translate-y-2 text-ivory opacity-100 transition-all duration-500 sm:opacity-100">
                       <span className="meta text-brass">{pieces.length} pieces</span>
+                    </div>
+                    {/* Persistent affordance — visible without hover (mobile + first-time users) */}
+                    <div className="absolute bottom-5 right-5 z-10 flex items-center gap-1.5 border border-ivory/30 bg-charcoal/55 px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-ivory backdrop-blur-sm transition-colors duration-300 group-hover:border-brass group-hover:text-brass sm:px-4 sm:py-2 sm:text-[0.65rem]">
+                      View all
+                      <ArrowUpRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                     </div>
                   </div>
                   <div className="mt-5 flex items-baseline justify-between border-b border-ivory/15 pb-5">

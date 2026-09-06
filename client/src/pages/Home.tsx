@@ -90,9 +90,9 @@ export default function Home() {
           <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-6">
             <span className="text-[0.56rem] text-ivory/25 sm:hidden">© 2026 · {PHONE}</span>
             <span className="flex gap-6 text-[0.62rem] font-bold uppercase tracking-[0.14em]">
-              <a href="https://www.facebook.com/HeavenFurnitureMart" className="hover:text-ivory">Facebook</a>
-              <a href="https://www.instagram.com/heaven_furniture_ltd" className="hover:text-ivory">Instagram</a>
-              <a href="https://www.youtube.com/@HeavenFurnitureMart" className="hover:text-ivory">YouTube</a>
+              <a href="https://www.facebook.com/HeavenFurnitureMart" target="_blank" rel="noopener noreferrer" className="hover:text-ivory">Facebook</a>
+              <a href="https://www.instagram.com/heaven_furniture_ltd" target="_blank" rel="noopener noreferrer" className="hover:text-ivory">Instagram</a>
+              <a href="https://www.youtube.com/@HeavenFurnitureMart" target="_blank" rel="noopener noreferrer" className="hover:text-ivory">YouTube</a>
             </span>
           </div>
         </div>
