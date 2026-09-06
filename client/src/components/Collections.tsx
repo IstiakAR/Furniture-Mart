@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Cta } from "@/components/Cta";
@@ -10,8 +10,28 @@ export function Collections({
   onOpenCategory: (category: Product["category"], products: Product[]) => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [shiftPx, setShiftPx] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref });
-  const x = useTransform(scrollYProgress, [0, 0.2, 1], ["0%", "0%", "-72%"]);
+  const x = useTransform(scrollYProgress, [0, 0.2, 1], [0, 0, -shiftPx]);
+
+  // Measure the real track overhang so the horizontal drift ends exactly on
+  // the last card at every breakpoint (vw-based card widths vary a lot).
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const measure = () => {
+      setShiftPx(Math.max(0, track.scrollWidth - window.innerWidth));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(track);
+    window.addEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
 
   const byCat = useMemo(() => {
     const map: Record<string, Product[]> = {};
@@ -24,22 +44,22 @@ export function Collections({
   return (
     <section id="collections" className="relative bg-charcoal text-ivory">
       <div ref={ref} className="relative h-[340vh]">
-        <div className="sticky top-0 flex h-screen flex-col justify-start overflow-hidden pt-24">
-          <div className="container mb-8 flex items-end justify-between">
+        <div className="sticky top-0 flex h-svh flex-col justify-start overflow-hidden pt-20 sm:pt-24">
+          <div className="container mb-6 flex items-end justify-between sm:mb-8">
             <div>
               <div className="eyebrow text-brass">Collections</div>
               <h2 className="display-serif mt-4 text-[clamp(2.4rem,5.5vw,4.4rem)] leading-[0.9] text-ivory">A snapshot of the studio.</h2>
             </div>
           </div>
 
-          <motion.div className="flex w-max items-stretch gap-6 px-5 sm:px-8 lg:gap-12" style={{ x }}>
+          <motion.div ref={trackRef} className="flex w-max items-stretch gap-5 px-5 sm:gap-6 sm:px-8 lg:gap-12" style={{ x }}>
             {COLLECTIONS.map((c, i) => {
               const pieces = byCat[c.category] || [];
               return (
                 <button
                   key={c.key}
                   onClick={() => onOpenCategory(c.category, pieces)}
-                  className="group relative flex w-[78vw] shrink-0 flex-col justify-end text-left sm:w-[52vw] lg:w-[42vw] xl:w-[34vw]"
+                  className="group relative flex w-[70vw] shrink-0 flex-col justify-end text-left sm:w-[52vw] lg:w-[42vw] xl:w-[34vw]"
                 >
                   <span className="mb-4 flex items-baseline gap-4">
                     <span className="chapter-number text-brass/50">{String(i + 1).padStart(2, "0")}</span>

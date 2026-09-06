@@ -32,7 +32,7 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-5">
-          <Cta label={CTA_LABEL} dark={!scrolled} className={`hidden md:inline-flex ${scrolled ? "text-charcoal/70 hover:text-charcoal" : "text-ivory/80 hover:text-ivory"}`} />
+          <Cta label={CTA_LABEL} dark={!scrolled} className={`hidden lg:inline-flex ${scrolled ? "text-charcoal/70 hover:text-charcoal" : "text-ivory/80 hover:text-ivory"}`} />
           <button
             onClick={() => setMenuOpen((v) => !v)}
             className={`grid h-9 w-9 place-items-center lg:hidden ${scrolled ? "text-charcoal" : "text-ivory"}`}

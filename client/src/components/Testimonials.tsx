@@ -24,12 +24,11 @@ function CommentCard({ c }: { c: (typeof COMMENTS)[number] }) {
     <div className="rounded-2xl border border-ivory/10 bg-white/[0.06] p-5 backdrop-blur-sm">
       <div className="flex gap-3.5">
         <Avatar name={c.author} color={c.color} />
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <div className="flex items-baseline gap-2">
             <span className="text-[0.95rem] font-semibold text-ivory">{c.author}</span>
-            <span className="truncate text-[0.66rem] text-ivory/35">· {c.place}</span>
           </div>
-          <p className="mt-2 text-[0.92rem] leading-relaxed text-ivory/80">{c.text}</p>
+          <p className="mt-1.5 text-[0.92rem] leading-relaxed text-ivory/80">{c.text}</p>
         </div>
       </div>
     </div>

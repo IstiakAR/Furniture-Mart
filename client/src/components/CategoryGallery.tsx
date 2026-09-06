@@ -50,7 +50,7 @@ export function CategoryGallery({
         className="fixed top-0 right-0 z-[96] flex flex-col bg-[#FCFBF8] shadow-2xl sm:rounded-l-2xl"
         style={{ height: "100dvh", width: "min(560px, 100vw)" }}
       >
-        <div className="flex items-start justify-between border-b border-charcoal/10 px-7 py-5 shrink-0">
+        <div className="flex items-start justify-between gap-4 border-b border-charcoal/10 px-5 py-4 shrink-0 sm:px-7 sm:py-5">
           <div>
             <div className="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-wood">{category}</div>
             <div className="display-serif mt-1 text-[2rem] leading-none text-charcoal">{products.length} pieces</div>
@@ -64,7 +64,7 @@ export function CategoryGallery({
           </button>
         </div>
 
-        <div ref={scrollRef} className="flex-1 overflow-y-auto p-6">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-6 sm:p-6">
           <div className="flex flex-col gap-6">
             {products.map((p, i) => (
               <motion.button

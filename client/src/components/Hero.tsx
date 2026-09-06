@@ -31,7 +31,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" ref={ref} className="relative h-screen min-h-[640px] overflow-hidden bg-charcoal">
+    <section id="hero" ref={ref} className="relative h-svh min-h-[560px] overflow-hidden bg-charcoal">
       <motion.div className="absolute inset-0 will-change-transform" style={{ scale }}>
         <motion.div
           className="absolute inset-0 will-change-transform"

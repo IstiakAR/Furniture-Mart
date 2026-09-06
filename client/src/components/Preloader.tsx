@@ -82,7 +82,7 @@ export function Preloader() {
         {/* Logo */}
         <img
           ref={logoRef}
-          src="/manus-storage/logo.jpg"
+          src="/manus-storage/logo.webp"
           alt="Heaven Furniture Mart"
           className="h-20 w-20 object-contain"
           style={{ opacity: 0 }}

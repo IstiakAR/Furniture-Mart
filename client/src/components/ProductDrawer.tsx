@@ -43,7 +43,7 @@ export function ProductDrawer({
             transition={{ type: "tween", duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
             className="fixed inset-y-0 right-0 z-50 flex h-full w-full max-w-[560px] flex-col bg-[#FCFBF8] shadow-2xl sm:rounded-l-2xl"
           >
-            <div className="flex items-start justify-between border-b border-charcoal/10 px-7 py-5">
+            <div className="flex items-start justify-between gap-3 border-b border-charcoal/10 px-5 py-4 sm:px-7 sm:py-5">
               <div className="flex items-start gap-3">
                 {onBack && (
                   <button
@@ -69,7 +69,7 @@ export function ProductDrawer({
                 <img src={product.image} alt={product.title} className="h-full w-full object-cover" />
               </div>
 
-              <div className="px-7 py-7">
+              <div className="px-5 py-6 sm:px-7 sm:py-7">
                 <p className="display-serif text-xl italic text-charcoal/70">{product.subtitle}</p>
 
                 <div className="mt-7 divide-y divide-charcoal/10 border-y border-charcoal/10">
@@ -79,7 +79,7 @@ export function ProductDrawer({
                     ["Finish", product.finish],
                     ["Availability", product.note],
                   ].map(([k, v]) => (
-                    <div key={k} className="grid grid-cols-[8ch_1fr] gap-3 py-4 text-sm sm:grid-cols-[10ch_1fr] sm:gap-4">
+                    <div key={k} className="flex flex-col gap-1 py-4 text-sm sm:grid sm:grid-cols-[10ch_1fr] sm:gap-4">
                       <span className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-charcoal/40">{k}</span>
                       <span className="text-charcoal">{v}</span>
                     </div>

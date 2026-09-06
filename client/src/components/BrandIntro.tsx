@@ -30,11 +30,11 @@ export function BrandIntro() {
 
   return (
     <section ref={ref} className="relative bg-ivory" style={{ minHeight: "280vh" }}>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <div className="container grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-20">
+      <div className="sticky top-0 flex h-svh items-center overflow-hidden">
+        <div className="container grid gap-8 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-20 lg:py-0">
           <div className="order-2 lg:order-1">
             <div className="eyebrow text-wood">Our approach</div>
-            <div className="relative mt-6 overflow-hidden lg:mt-8 lg:h-[34rem]">
+            <div className="relative mt-6 h-[46vh] max-h-[26rem] overflow-hidden sm:h-[52vh] sm:max-h-[30rem] lg:mt-8 lg:h-[34rem] lg:max-h-none">
               {images.map((src, i) => (
                 <motion.img
                   key={i}

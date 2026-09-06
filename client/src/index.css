@@ -164,11 +164,13 @@ html { scrollbar-width: thin; scrollbar-color: #29443f #0d1d1b; }
 .btn-arrow { transition: transform 420ms cubic-bezier(.23,1,.32,1); }
 
 /* Editorial link — uppercase wordmark with sweeping underline */
-.editorial-link { position: relative; display: inline-flex; align-items: baseline; gap: 0.75rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
-.editorial-link::after { content: ''; position: absolute; height: 1px; left: 0; right: 100%; bottom: -6px; background: currentColor; transition: right 420ms cubic-bezier(.23,1,.32,1); }
-.editorial-link:hover::after, .editorial-link:focus-visible::after { right: 0; }
-.editorial-link .btn-arrow { transition: transform 420ms cubic-bezier(.23,1,.32,1); }
-.editorial-link:hover .btn-arrow { transform: translateX(5px); }
+@layer components {
+  .editorial-link { position: relative; display: inline-flex; align-items: baseline; gap: 0.75rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+  .editorial-link::after { content: ''; position: absolute; height: 1px; left: 0; right: 100%; bottom: -6px; background: currentColor; transition: right 420ms cubic-bezier(.23,1,.32,1); }
+  .editorial-link:hover::after, .editorial-link:focus-visible::after { right: 0; }
+  .editorial-link .btn-arrow { transition: transform 420ms cubic-bezier(.23,1,.32,1); }
+  .editorial-link:hover .btn-arrow { transform: translateX(5px); }
+}
 
 /* Text — gentle tracking reveal on scroll */
 .eyebrow-reveal { letter-spacing: 0.14em; opacity: 0; transition: letter-spacing 900ms cubic-bezier(.23,1,.32,1), opacity 700ms ease; }
@@ -181,7 +183,7 @@ html { scrollbar-width: thin; scrollbar-color: #29443f #0d1d1b; }
 .collection-card:hover { transform: translateY(-4px); }
 
 /* Trust check — subtle fill on hover */
-.trust-row .check-box { transition: background-color 300ms ease, border-color 300ms ease, color 300ms eat; }
+.trust-row .check-box { transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease; }
 .trust-row:hover .check-box { background: #b79a67; border-color: #b79a67; color: #102321; }
 
 @media (min-width: 640px) { .container { padding-inline: 2rem; } }

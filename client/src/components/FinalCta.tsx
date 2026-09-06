@@ -27,27 +27,27 @@ export function FinalCta() {
         <div className="mt-12 flex justify-center">
           <Cta label={CTA_LABEL} solid />
         </div>
-        <div className="mx-auto mt-14 grid max-w-3xl gap-px border border-charcoal/10 bg-charcoal/10 sm:grid-cols-[1fr_1.4fr_1fr]">
+        <div className="mx-auto mt-14 w-full max-w-4xl grid gap-px border border-charcoal/10 bg-charcoal/10 sm:grid-cols-[1fr_1.4fr_1.3fr]">
           <a href={PHONE_TEL} className="group flex items-center gap-3 bg-ivory p-5 text-left transition-colors hover:bg-charcoal">
             <Phone className="h-4 w-4 shrink-0 text-brass" />
             <span className="min-w-0">
-              <span className="block text-[0.6rem] uppercase tracking-[0.14em] text-charcoal/45">Call</span>
+              <span className="block text-[0.6rem] uppercase tracking-[0.14em] text-charcoal/45 transition-colors group-hover:text-ivory/60">Call</span>
               <span className="block truncate text-sm font-semibold text-charcoal group-hover:text-ivory">{PHONE}</span>
             </span>
           </a>
           <a href={MAILTO} className="group flex items-center gap-3 bg-ivory p-5 text-left transition-colors hover:bg-charcoal">
             <Mail className="h-4 w-4 shrink-0 text-brass" />
             <span className="min-w-0">
-              <span className="block text-[0.6rem] uppercase tracking-[0.14em] text-charcoal/45">Email</span>
+              <span className="block text-[0.6rem] uppercase tracking-[0.14em] text-charcoal/45 transition-colors group-hover:text-ivory/60">Email</span>
               <span className="block truncate text-sm font-semibold text-charcoal group-hover:text-ivory">{EMAIL}</span>
             </span>
           </a>
           <a href={MAPS} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-ivory p-5 text-left transition-colors hover:bg-charcoal">
             <MapPin className="h-4 w-4 shrink-0 text-brass" />
             <span className="min-w-0">
-              <span className="block text-[0.6rem] uppercase tracking-[0.14em] text-charcoal/45">Showroom</span>
-              <span className="block text-sm font-semibold text-charcoal group-hover:text-ivory">Agrabad, Chattogram</span>
-              <span className="block text-[0.68rem] text-charcoal/50">10am–8pm</span>
+              <span className="block text-[0.6rem] uppercase tracking-[0.14em] text-charcoal/45 transition-colors group-hover:text-ivory/60">Showroom</span>
+              <span className="block text-sm font-semibold text-charcoal group-hover:text-ivory">Agrabad Access Road, Chattogram</span>
+              <span className="block text-[0.68rem] text-charcoal/50 transition-colors group-hover:text-ivory/60">10am–8pm</span>
             </span>
           </a>
         </div>
